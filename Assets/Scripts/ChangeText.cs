@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class ChangeText : MonoBehaviour
-{ 
+{   
     public Text buttonText;
     private int digit = 0;
 
@@ -18,9 +18,10 @@ public class ChangeText : MonoBehaviour
     void Update()
     {
         
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) )
         {
             //delay
+            
             IterateText();
         }
 
