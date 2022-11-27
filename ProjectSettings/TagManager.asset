@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Interactable
   - VaultFirstDigit
+  - DoorIn
   layers:
   - Default
   - TransparentFX
