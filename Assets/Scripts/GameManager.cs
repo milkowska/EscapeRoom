@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager instance = null;
+    public static GameManager instance;
 
     private void Awake()
     {
@@ -13,17 +13,22 @@ public class GameManager : MonoBehaviour
         {
             instance = this;
         } else {
-            Destroy(this);
+            Destroy(this.gameObject);
         }
+        DontDestroyOnLoad(this.gameObject);
     }
 
     public GameObject key;
     public bool foundKey = false;
 
+    // dodac hammer tez?
+
     public void FoundKey()
     {
         foundKey = true;
     }
+
+
 
     public void WinGame()
     {

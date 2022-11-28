@@ -5,33 +5,24 @@ using UnityEngine.SceneManagement;
 
 public class Door : MonoBehaviour
 {
-    public bool isOpen;
+    bool isOpen = false;
     private Animator anim;
-    private SceneManager currentScene;
+    public string Scene;
 
     public void Start()
     {
-        isOpen = false;
-        anim = GetComponentInChildren<Animator>();
+        anim = GetComponent<Animator>();
     }
-
- 
-    public void Update()
-    {
-       
-    }
-
 
     public void OnMouseDown()
     {
-        Debug.Log("Clicked on object!");
-        if (isOpen == false)
+        if (isOpen)
         {
-            anim.SetTrigger("DoorOpen");
-            isOpen = true;
-            SceneManager.LoadScene("SecondRoom");
-        } 
-        
-    }
+            SceneManager.LoadScene(Scene);
+        }
 
+        isOpen = !isOpen;
+        Debug.Log("Clicked door");
+        anim.SetTrigger("DoorOpen");
+    }
 }
