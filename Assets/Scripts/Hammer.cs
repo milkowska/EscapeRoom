@@ -1,16 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class Key : MonoBehaviour
+public class Hammer : MonoBehaviour
 {
-    public GameObject key;
+    public bool isClicked;
     public GameObject description;
-    public bool foundKey = false;
 
     // Start is called before the first frame update
     void Start()
     {
+       // isClicked = false;
+        description.SetActive(false);
         
     }
 
@@ -19,27 +21,18 @@ public class Key : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(1))
         {
+            isClicked = true;
             description.SetActive(true);
             StartCoroutine(DelayCoroutine());
         }
-
-    }
-
+        
+    } 
+    
     IEnumerator DelayCoroutine()
     {
         yield return new WaitForSeconds(3);
         description.SetActive(false);
     }
+
+    }
     
-    public void Show()
-    {
-        foundKey = true;
-        key.SetActive(true);
-    }
-
-    public void Hide()
-    {
-        key.SetActive(false);
-    }
-
-}
