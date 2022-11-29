@@ -6,15 +6,18 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/StartScreen.unity
+    path: Assets/GameDesign/Scenes/StartScreen.unity
     guid: 3eba6b4ee7bb473498b8392d0553909a
   - enabled: 1
-    path: Assets/Scenes/FirstRoom.unity
+    path: Assets/GameDesign/Scenes/FirstRoom.unity
     guid: 3119d41a2dfd56d499f482ee9ed6cd8d
   - enabled: 1
-    path: Assets/Scenes/SecondRoom.unity
+    path: Assets/GameDesign/Scenes/SecondRoom.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/Menu.unity
+    path: Assets/GameDesign/Scenes/Menu.unity
     guid: b3c77256297bdf645a73fdb666e19486
+  - enabled: 1
+    path: Assets/GameDesign/Scenes/WinScene.unity
+    guid: 07a603d9fd69afd47a43dd455e5b4978
   m_configObjects: {}
