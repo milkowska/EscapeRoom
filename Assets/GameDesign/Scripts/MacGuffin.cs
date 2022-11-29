@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class MacGuffin : MonoBehaviour
 {
     Item item;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -15,7 +16,6 @@ public class MacGuffin : MonoBehaviour
         }
         item = new Item("MacGuffin", GetComponent<SpriteRenderer>().sprite); // map
     }
-
 
     private void OnMouseOver()
     {
@@ -35,6 +35,7 @@ public class MacGuffin : MonoBehaviour
         InventoryManager.Instance.Add(item);
         GameManager.isMapPickedUp = true;
         TextManager.instruction = "";
+        AudioManager.instance.PlaySound("itemPickup");
         Destroy(this.gameObject);
     }
 }

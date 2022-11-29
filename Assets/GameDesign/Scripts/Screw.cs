@@ -5,6 +5,7 @@ using UnityEngine;
 public class Screw : MonoBehaviour
 {
     Item item;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -33,6 +34,7 @@ public class Screw : MonoBehaviour
         InventoryManager.Instance.Add(item);
         GameManager.isScrewPickedUp = true;
         TextManager.instruction = "";
+        AudioManager.instance.PlaySound("itemPickup");
         Destroy(this.gameObject);
     }
 }

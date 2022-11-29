@@ -44,6 +44,7 @@ public class Hammer : MonoBehaviour
         InventoryManager.Instance.Add(item);
         GameManager.isHammerPickedUp = true;
         TextManager.instruction = "";
+        AudioManager.instance.PlaySound("itemPickup");
         Destroy(this.gameObject);
     }
 }

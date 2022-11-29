@@ -26,6 +26,7 @@ public class InventoryManager : MonoBehaviour
     public void Add(Item item)
     {
         Items.Add(item);
+        ListItems();
     }
 
     public void ListItems()
@@ -45,5 +46,10 @@ public class InventoryManager : MonoBehaviour
             ItemName.text = item.ItemName;
             itemIcon.sprite = item.ItemIcon;
         }
+    }
+
+    public void disableInventory()
+    {
+        this.gameObject.SetActive(false);
     }
 }

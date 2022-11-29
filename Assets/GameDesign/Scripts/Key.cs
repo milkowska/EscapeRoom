@@ -6,10 +6,8 @@ using UnityEngine.UI;
 public class Key : MonoBehaviour
 {
     public GameObject key;
-    public bool foundKey = false;
     Item item;
 
-    // Start is called before the first frame update
     void Start()
     {
         if (GameManager.isKeyPickedUp)
@@ -17,18 +15,6 @@ public class Key : MonoBehaviour
             Destroy(this.gameObject);
         }
         item = new Item("Key", GetComponent<SpriteRenderer>().sprite);
-    }
-
-   
-    public void Show()
-    {
-        foundKey = true;
-        key.SetActive(true);
-    }
-
-    public void Hide()
-    {
-        key.SetActive(false);
     }
 
     private void OnMouseOver()
@@ -49,6 +35,7 @@ public class Key : MonoBehaviour
         InventoryManager.Instance.Add(item);
         GameManager.isKeyPickedUp = true;
         TextManager.instruction = "";
+        AudioManager.instance.PlaySound("itemPickup");
         Destroy(this.gameObject);
     }
 }

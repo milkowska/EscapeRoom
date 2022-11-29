@@ -10,18 +10,19 @@ public class Door : MonoBehaviour
     bool isOpen = false;
     private Animator anim;
     public string Scene;
-    private bool hasKey = false;
+    public bool hasKey = false;
 
+  
     public void Start()
     {
         anim = GetComponent<Animator>();
-        
+        hasKey = GameManager.isKeyPickedUp;
     }
     private void OnMouseOver()
     {
         if (Input.GetMouseButtonDown(1))
         {
-            if (id == "DoorOut" && !GameManager.isKeyPickedUp) 
+            if (id == "DoorOut" && !hasKey) 
             {
                 TextManager.instruction = "The door is locked!";
                 Debug.Log("Closed door, you need a key");
@@ -40,14 +41,33 @@ public class Door : MonoBehaviour
 
     public void OnMouseDown()
     {
-        if (isOpen)
+        if (id == "DoorIn")
         {
-            SceneManager.LoadScene(Scene);
-        }
+            if (isOpen)
+            {
+                SceneManager.LoadScene(Scene);
+            }
 
-        isOpen = !isOpen;
-        Debug.Log("Clicked door");
-        anim.SetTrigger("DoorOpen");
-        TextManager.instruction = "";
+            isOpen = !isOpen;
+            Debug.Log("Clicked door");
+            anim.SetTrigger("DoorOpen");
+            TextManager.instruction = "";
+        }else if(id == "DoorOut" && hasKey)
+        {
+            anim.SetTrigger("DoorOpen");
+            TextManager.instruction = "";
+            isOpen = !isOpen;
+            if (isOpen)
+            {
+                if (Scene == "WinScene")
+                {
+                    InventoryManager.Instance.disableInventory();
+                }
+                SceneManager.LoadScene(Scene);
+            }
+            
+        }
+       
+
     }
 }

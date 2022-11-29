@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: PinkAndBlue
   m_EditorClassIdentifier: 
   colorMode: 3
-  topLeft: {r: 1, g: 0.7803922, b: 0.93725497, a: 1}
-  topRight: {r: 1, g: 0.78039217, b: 0.9372549, a: 1}
-  bottomLeft: {r: 0.8078432, g: 0.8745099, b: 1, a: 1}
-  bottomRight: {r: 0.80784315, g: 0.8745098, b: 1, a: 1}
+  topLeft: {r: 1, g: 0.77496696, b: 0.495283, a: 1}
+  topRight: {r: 0.64140284, g: 0.6901961, b: 0.07843138, a: 1}
+  bottomLeft: {r: 1, g: 0.13477123, b: 0, a: 1}
+  bottomRight: {r: 1, g: 0.13725491, b: 0, a: 1}

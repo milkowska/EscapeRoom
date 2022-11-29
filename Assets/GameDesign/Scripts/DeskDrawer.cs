@@ -15,13 +15,13 @@ public class DeskDrawer : MonoBehaviour
     public GameObject colliderOpen;
     public GameObject colliderClosed;
 
-    SpriteRenderer sr;
+    SpriteRenderer spriteR;
 
     public static bool isDrawerOpen = false;
 
     private void Start()
     {
-        sr = GetComponent<SpriteRenderer>();
+        spriteR = GetComponent<SpriteRenderer>();
         keyObject.SetActive(false);
     }
 
@@ -34,34 +34,16 @@ public class DeskDrawer : MonoBehaviour
             {
                 keyObject.SetActive(true);
             }
-            sr.sprite = drawerOpened;
+            spriteR.sprite = drawerOpened;
             colliderOpen.SetActive(true);
             colliderClosed.SetActive(false);
             foundKey = true;
         }
         else
         {
-            sr.sprite = drawerClosed;
+            spriteR.sprite = drawerClosed;
             colliderOpen.SetActive(false);
             colliderClosed.SetActive(true);
         }
     }
-
-    /* 
-    public void TakeKey()
-    {
-        GameManager.instance.FoundKey();
-        anim = GetComponent<Animator>();
-    }
-
-    public void OpenDrawer()
-    {
-        gameObject.SetActive(true);
-    }
-
-    public void CloseDrawer()
-    {
-        gameObject.SetActive(false);
-    }
-    */
 }
