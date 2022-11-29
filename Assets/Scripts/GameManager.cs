@@ -20,7 +20,10 @@ public class GameManager : MonoBehaviour
 
     public GameObject key;
     public bool foundKey = false;
-
+    public static bool isHammerPickedUp = false;
+    public static bool isKeyPickedUp = false;
+    public static bool isMapPickedUp = false;
+    public static bool isScrewPickedUp = false;
     // dodac hammer tez?
 
     public void FoundKey()

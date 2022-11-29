@@ -1,36 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Key : MonoBehaviour
 {
     public GameObject key;
-    public GameObject description;
     public bool foundKey = false;
+    Item item;
 
     // Start is called before the first frame update
     void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetMouseButtonDown(1))
+        if (GameManager.isKeyPickedUp)
         {
-            description.SetActive(true);
-            StartCoroutine(DelayCoroutine());
+            Destroy(this.gameObject);
         }
-
+        item = new Item("Key", GetComponent<SpriteRenderer>().sprite);
     }
 
-    IEnumerator DelayCoroutine()
-    {
-        yield return new WaitForSeconds(3);
-        description.SetActive(false);
-    }
-    
+   
     public void Show()
     {
         foundKey = true;
@@ -42,4 +31,24 @@ public class Key : MonoBehaviour
         key.SetActive(false);
     }
 
+    private void OnMouseOver()
+    {
+        if (Input.GetMouseButtonDown(1))
+        {
+            TextManager.instruction = "This is a key!";
+        }
+    }
+
+    private void OnMouseExit()
+    {
+        TextManager.instruction = "";
+    }
+
+    private void OnMouseDown()
+    {
+        InventoryManager.Instance.Add(item);
+        GameManager.isKeyPickedUp = true;
+        TextManager.instruction = "";
+        Destroy(this.gameObject);
+    }
 }

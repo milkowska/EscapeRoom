@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ItemPickUp : MonoBehaviour
 {
+    /*
     public Item item;
 
     void Pickup()
@@ -15,4 +16,5 @@ public class ItemPickUp : MonoBehaviour
     {
         Pickup();
     }
+    */
 }

@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class Door : MonoBehaviour
 {
+    public Text description;
     bool isOpen = false;
     private Animator anim;
     public string Scene;

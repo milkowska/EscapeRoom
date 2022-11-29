@@ -1,27 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class MacGuffin : MonoBehaviour
+public class Screw : MonoBehaviour
 {
     Item item;
     // Start is called before the first frame update
     void Start()
     {
-        if (GameManager.isMapPickedUp)
+        if (GameManager.isScrewPickedUp)
         {
             Destroy(this.gameObject);
         }
-        item = new Item("MacGuffin", GetComponent<SpriteRenderer>().sprite); // map
+        item = new Item("Screw", GetComponent<SpriteRenderer>().sprite);
     }
-
 
     private void OnMouseOver()
     {
         if (Input.GetMouseButtonDown(1))
         {
-            TextManager.instruction = "This is a MacGuffin. It looks like a map!";
+            TextManager.instruction = "This is a screw!";
         }
     }
 
@@ -33,7 +31,7 @@ public class MacGuffin : MonoBehaviour
     private void OnMouseDown()
     {
         InventoryManager.Instance.Add(item);
-        GameManager.isMapPickedUp = true;
+        GameManager.isScrewPickedUp = true;
         TextManager.instruction = "";
         Destroy(this.gameObject);
     }
