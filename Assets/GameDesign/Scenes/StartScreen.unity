@@ -123,6 +123,63 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &200862656
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4515288578049328457, guid: da7ce34c7fbd2214bbdb720c15c9890e, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4515288578049328457, guid: da7ce34c7fbd2214bbdb720c15c9890e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4515288578049328457, guid: da7ce34c7fbd2214bbdb720c15c9890e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4515288578049328457, guid: da7ce34c7fbd2214bbdb720c15c9890e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4515288578049328457, guid: da7ce34c7fbd2214bbdb720c15c9890e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4515288578049328457, guid: da7ce34c7fbd2214bbdb720c15c9890e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4515288578049328457, guid: da7ce34c7fbd2214bbdb720c15c9890e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4515288578049328457, guid: da7ce34c7fbd2214bbdb720c15c9890e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4515288578049328457, guid: da7ce34c7fbd2214bbdb720c15c9890e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4515288578049328457, guid: da7ce34c7fbd2214bbdb720c15c9890e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4515288578049328457, guid: da7ce34c7fbd2214bbdb720c15c9890e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4515288578049328459, guid: da7ce34c7fbd2214bbdb720c15c9890e, type: 3}
+      propertyPath: m_Name
+      value: GameManager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: da7ce34c7fbd2214bbdb720c15c9890e, type: 3}
 --- !u!1 &340645254
 GameObject:
   m_ObjectHideFlags: 0
@@ -1092,7 +1149,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3698637471204029174, guid: 57c580f2cd324e74db09a72a3f220c24, type: 3}
       propertyPath: soundList.Array.size
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3698637471204029174, guid: 57c580f2cd324e74db09a72a3f220c24, type: 3}
       propertyPath: sounds.Array.data[0]
@@ -1109,7 +1166,7 @@ PrefabInstance:
     - target: {fileID: 3698637471204029174, guid: 57c580f2cd324e74db09a72a3f220c24, type: 3}
       propertyPath: soundList.Array.data[1]
       value: 
-      objectReference: {fileID: 8300000, guid: 91c7033a06347d34496d510362e7f576, type: 3}
+      objectReference: {fileID: 8300000, guid: 11cbc9e22d3e4864ea576f333ffee7b0, type: 3}
     - target: {fileID: 3698637471204029174, guid: 57c580f2cd324e74db09a72a3f220c24, type: 3}
       propertyPath: soundList.Array.data[2]
       value: 
@@ -1118,6 +1175,10 @@ PrefabInstance:
       propertyPath: soundList.Array.data[3]
       value: 
       objectReference: {fileID: 8300000, guid: 5694f99fa22a2d647874f26350792f83, type: 3}
+    - target: {fileID: 3698637471204029174, guid: 57c580f2cd324e74db09a72a3f220c24, type: 3}
+      propertyPath: soundList.Array.data[4]
+      value: 
+      objectReference: {fileID: 8300000, guid: fa46bf4b107ab1b4e91956fd3320c11e, type: 3}
     - target: {fileID: 3698637471204029175, guid: 57c580f2cd324e74db09a72a3f220c24, type: 3}
       propertyPath: m_Name
       value: AudioManager

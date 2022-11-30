@@ -11,6 +11,7 @@ public class Door : MonoBehaviour
     private Animator anim;
     public string Scene;
     public bool hasKey = false;
+    public SpriteRenderer outline;
 
   
     public void Start()
@@ -33,10 +34,14 @@ public class Door : MonoBehaviour
                 Debug.Log("This is an open door");
             }
         }
+        outline.enabled = true;
+
     }
     private void OnMouseExit()
     {
         TextManager.instruction = "";
+        outline.enabled = false;
+
     }
 
     public void OnMouseDown()
@@ -52,22 +57,27 @@ public class Door : MonoBehaviour
             Debug.Log("Clicked door");
             anim.SetTrigger("DoorOpen");
             TextManager.instruction = "";
-        }else if(id == "DoorOut" && hasKey)
+            AudioManager.instance.PlaySound("openDoors");
+        }
+        else if(id == "DoorOut" && hasKey)
         {
             anim.SetTrigger("DoorOpen");
             TextManager.instruction = "";
             isOpen = !isOpen;
+            AudioManager.instance.PlaySound("openDoors");
             if (isOpen)
             {
                 if (Scene == "WinScene")
                 {
-                    InventoryManager.Instance.disableInventory();
+                    AudioManager.instance.PlaySound("success");
+                    InventoryManager.Instance.destroyInventory();
                 }
                 SceneManager.LoadScene(Scene);
             }
             
         }
-       
+        
+
 
     }
 }

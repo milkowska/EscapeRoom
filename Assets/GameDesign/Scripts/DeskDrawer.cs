@@ -38,12 +38,15 @@ public class DeskDrawer : MonoBehaviour
             colliderOpen.SetActive(true);
             colliderClosed.SetActive(false);
             foundKey = true;
+
         }
         else
         {
             spriteR.sprite = drawerClosed;
             colliderOpen.SetActive(false);
             colliderClosed.SetActive(true);
+ 
         }
     }
+   
 }

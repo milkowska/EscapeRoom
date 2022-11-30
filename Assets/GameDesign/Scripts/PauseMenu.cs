@@ -47,9 +47,16 @@ public class PauseMenu : MonoBehaviour
         Debug.Log("Quit");
         Application.Quit();
     }
-
+    public void MainMenu()
+    {
+        SceneManager.LoadScene("StartScreen");
+    }
     public void RestartGame()
     {
-        SceneManager.LoadScene("FirstRoom");
+        InventoryManager.Instance.Reset();
+        InventoryManager.Instance.destroyInventory();
+        GameManager.instance.Reset();
+        SceneManager.LoadScene("StartScreen");
+
     }
 }

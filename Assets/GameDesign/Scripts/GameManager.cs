@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
         if (instance == null)
         {
             instance = this;
-        } else {
+        } else if (instance != this) { 
             Destroy(this.gameObject);
         }
         DontDestroyOnLoad(this.gameObject);
@@ -30,6 +30,15 @@ public class GameManager : MonoBehaviour
     {
         isGameFinished = true;
         SceneManager.LoadScene("WinScene");
+        Destroy(this.gameObject);
     }
 
+    public void Reset()
+    {
+        isHammerPickedUp = false;
+        isKeyPickedUp = false;
+        isMapPickedUp = false;
+        isScrewPickedUp = false;
+        isGameFinished = false;
+    }
 }

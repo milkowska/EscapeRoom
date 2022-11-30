@@ -5,7 +5,7 @@ using UnityEngine;
 public class Screw : MonoBehaviour
 {
     Item item;
-
+    public SpriteRenderer outline;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,11 +22,13 @@ public class Screw : MonoBehaviour
         {
             TextManager.instruction = "This is a screw!";
         }
+        outline.enabled = true;
     }
 
     private void OnMouseExit()
     {
         TextManager.instruction = "";
+        outline.enabled = false;
     }
 
     private void OnMouseDown()

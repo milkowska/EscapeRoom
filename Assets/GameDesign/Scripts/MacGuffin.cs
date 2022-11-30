@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class MacGuffin : MonoBehaviour
 {
     Item item;
-
+    public SpriteRenderer outline;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,11 +23,13 @@ public class MacGuffin : MonoBehaviour
         {
             TextManager.instruction = "This is a MacGuffin. It looks like a map!";
         }
+        outline.enabled = true;
     }
 
     private void OnMouseExit()
     {
         TextManager.instruction = "";
+        outline.enabled = false;
     }
 
     private void OnMouseDown()

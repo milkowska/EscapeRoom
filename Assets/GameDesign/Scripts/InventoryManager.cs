@@ -28,6 +28,16 @@ public class InventoryManager : MonoBehaviour
         Items.Add(item);
         ListItems();
     }
+    public void Reset()
+    {
+        Item[] list = FindObjectsOfType<Item>();
+
+        foreach(Item item in list)
+        {
+            Destroy(item);
+        }
+        Items.Clear();
+    }
 
     public void ListItems()
     {
@@ -48,8 +58,8 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
-    public void disableInventory()
+    public void destroyInventory()
     {
-        this.gameObject.SetActive(false);
+        Destroy(gameObject);
     }
 }

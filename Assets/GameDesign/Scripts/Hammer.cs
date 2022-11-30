@@ -7,6 +7,7 @@ public class Hammer : MonoBehaviour
 {
     public bool isClicked;
     Item item;
+    public SpriteRenderer outline;
 
     // Start is called before the first frame update
     void Start()
@@ -16,7 +17,8 @@ public class Hammer : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
-
+       
+        
         item = new Item("Hammer", GetComponent<SpriteRenderer>().sprite);
     }
 
@@ -32,11 +34,13 @@ public class Hammer : MonoBehaviour
         {
             TextManager.instruction = "This is a hammer";
         }
+        outline.enabled = true;
     }
 
     private void OnMouseExit()
     {
         TextManager.instruction = "";
+        outline.enabled = false;
     }
 
     private void OnMouseDown()
