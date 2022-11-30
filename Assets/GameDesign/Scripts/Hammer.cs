@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class Hammer : MonoBehaviour
 {
     public bool isClicked;
+    public bool isOutline = false;
     Item item;
     public SpriteRenderer outline;
 
@@ -45,11 +46,17 @@ public class Hammer : MonoBehaviour
 
     private void OnMouseDown()
     {
-        InventoryManager.Instance.Add(item);
+        if (!isOutline)
+        {
+            InventoryManager.Instance.Add(item);
+        }
         GameManager.isHammerPickedUp = true;
         TextManager.instruction = "";
         AudioManager.instance.PlaySound("itemPickup");
-        Destroy(this.gameObject);
+        if (gameObject != null)
+        {
+            Destroy(this.gameObject);
+        }
     }
 }
     
