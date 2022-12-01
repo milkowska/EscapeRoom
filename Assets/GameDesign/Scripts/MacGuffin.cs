@@ -21,9 +21,12 @@ public class MacGuffin : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(1))
         {
-            TextManager.instruction = "This is a MacGuffin. It looks like a map!";
+            TextManager.instruction = "This is a MacGuffin!";
         }
-        outline.enabled = true;
+        if (outline)
+        {
+            outline.enabled = true;
+        }
     }
 
     private void OnMouseExit()

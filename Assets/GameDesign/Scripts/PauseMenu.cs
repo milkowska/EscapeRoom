@@ -10,7 +10,7 @@ public class PauseMenu : MonoBehaviour
 
      void Start()
     {
-        paused = false;    
+        paused = false;
     }
 
     // Update is called once per frame
@@ -21,7 +21,8 @@ public class PauseMenu : MonoBehaviour
             if(paused)
             {
                 Resume();
-            }else
+            }
+            else
             {
                 Pause();
             }
@@ -39,7 +40,6 @@ public class PauseMenu : MonoBehaviour
         MidMenuUI.SetActive(false);
         Time.timeScale = 1f;
         paused = false;
-
     }
 
     public void QuitGame()
@@ -49,6 +49,7 @@ public class PauseMenu : MonoBehaviour
     }
     public void MainMenu()
     {
+     
         SceneManager.LoadScene("StartScreen");
     }
     public void RestartGame()

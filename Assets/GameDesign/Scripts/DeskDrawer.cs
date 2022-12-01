@@ -30,23 +30,25 @@ public class DeskDrawer : MonoBehaviour
         
         if (isDrawerOpen)
         {
-            if (!foundKey)
+            if (!GameManager.isKeyPickedUp)
             {
                 keyObject.SetActive(true);
             }
             spriteR.sprite = drawerOpened;
             colliderOpen.SetActive(true);
             colliderClosed.SetActive(false);
+           
             foundKey = true;
-
-        }
-        else
-        {
+            
+        } else {
             spriteR.sprite = drawerClosed;
             colliderOpen.SetActive(false);
             colliderClosed.SetActive(true);
- 
+            if (!GameManager.isKeyPickedUp)
+            {
+                keyObject.SetActive(false);
+            }
         }
     }
-   
+
 }

@@ -22,7 +22,10 @@ public class Screw : MonoBehaviour
         {
             TextManager.instruction = "This is a screw!";
         }
-        outline.enabled = true;
+        if (outline)
+        {
+            outline.enabled = true;
+        }
     }
 
     private void OnMouseExit()

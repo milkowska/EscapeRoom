@@ -18,24 +18,19 @@ public class Hammer : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
-       
-        
         item = new Item("Hammer", GetComponent<SpriteRenderer>().sprite);
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-    }
-
 
     private void OnMouseOver()
     {
         if (Input.GetMouseButtonDown(1))
         {
-            TextManager.instruction = "This is a hammer";
+            TextManager.instruction = "This is a hammer.";
         }
-        outline.enabled = true;
+        if (outline)
+        {
+            outline.enabled = true;
+        }
     }
 
     private void OnMouseExit()

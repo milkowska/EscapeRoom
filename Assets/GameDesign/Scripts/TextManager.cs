@@ -8,7 +8,6 @@ public class TextManager : MonoBehaviour
     Text buttonText;
     public static string instruction;
 
-
     void Start()
     {
         buttonText = GetComponent<Text>();

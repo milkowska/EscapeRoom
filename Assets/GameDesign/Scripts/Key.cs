@@ -24,7 +24,10 @@ public class Key : MonoBehaviour
         {
             TextManager.instruction = "This is a key!";
         }
-        outline.enabled = true;
+        if (outline)
+        {
+            outline.enabled = true;
+        }
     }
 
     private void OnMouseExit()
@@ -38,7 +41,7 @@ public class Key : MonoBehaviour
         InventoryManager.Instance.Add(item);
         GameManager.isKeyPickedUp = true;
         TextManager.instruction = "";
-        //AudioManager.instance.PlaySound("itemPickup");
+        AudioManager.instance.PlaySound("itemPickup");
         Destroy(this.gameObject);
     }
 }
