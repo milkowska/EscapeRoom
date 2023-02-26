@@ -18,5 +18,5 @@ Scenes: This folder contains the Unity scenes used to create the game. The "Star
 
 Scripts: This folder contains the C# scripts used to create the game mechanics, including object interaction and puzzle solving.
 
-Credits
+# Credits
 Escape Room was created by Weronika Milkowska. The game assets were created by Weronika Milkowska using this website: https://www.pixilart.com/draw. The game sound effects were sourced from https://pixabay.com/sound-effects/. 
